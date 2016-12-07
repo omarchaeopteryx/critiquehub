@@ -1,24 +1,22 @@
-# README
+# Team name
+* Two thumbs up
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Team Members
+* Benjamin
+* Omar
+* Chinh
+* Nhan
 
-Things you may want to cover:
+# General User's Stories (MVP)
+* Two type of users can register:
+1) Professional users
+2) Normal users
 
-* Ruby version
+* login/logout
+* leave comment for a review
+* find movie by title/genre
 
-* System dependencies
+# Professional User's Stories
+* leave a review and rating for a movie
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# Additional feature to be added
