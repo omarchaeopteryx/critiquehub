@@ -1,0 +1,3 @@
+    <% @genre.results.each do |movie| %>
+      <div><a href='/movies/<%=movie['id']%>'><img class='poster' src="https://image.tmdb.org/t/p/w500/<%=movie['poster_path']%>"><%= movie['original_title'] %></a></div>
+    <% end %>
