@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe Review do
+describe Comment do
   let!(:user) { User.create(username: "benjamin",
                            password_digest: "1234",
                            email: "benjamin@gmail.com"
@@ -14,7 +14,9 @@ describe Review do
   end
 
   it "has a user" do
-    expect(comment.user_id).to eq 1
+    u = User.find_by(username: "benjamin")
+    test_id = u.id
+    expect(comment.user_id).to eq test_id
   end
 
   it "has a user that is in our database" do
