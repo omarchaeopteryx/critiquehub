@@ -9,13 +9,9 @@ class UsersController < ApplicationController
       flash[:success] = "Welcome, #{@user.username}."
       redirect_to user_path(@user)
     else
-      render :new
+      render :new, status: 422
     end
   end
-
-  # def show
-  #   @user = User.find(params[:id])
-  # end
 
   private
 
