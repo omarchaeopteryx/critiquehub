@@ -28,7 +28,7 @@ describe User do
     expect(user.save).to be false
   end
 
-  it "has a username without case snesitive" do
+  it "has a username without case sensitive" do
     user2 = User.new(username: "BENJAMIN",
                        password_digest: "1234",
                        email: "benjamin@gmail.com"
@@ -43,7 +43,7 @@ describe User do
     expect(user.save).to be false
   end
 
-  it "has a username without case snesitive" do
+  it "has a username without case sensitive" do
     user2 = User.new(username: "benjamin",
                        password_digest: "1234",
                        email: "BENJAMIN@gmail.com"
