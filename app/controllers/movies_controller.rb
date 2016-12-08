@@ -3,8 +3,8 @@ require 'themoviedb'
 class MoviesController < ApplicationController
 
   def index
-    p params
-    p params[:genre]
+
+    @title = params[:genre]
     @genre = Tmdb::Genre.find(params[:genre])
     render :index
   end
