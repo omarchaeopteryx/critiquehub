@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 20161208004329) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "comments", force: :cascade do |t|
     t.integer "review_id",   null: false
     t.integer "user_id",     null: false
