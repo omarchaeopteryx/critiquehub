@@ -12,7 +12,7 @@ $(document).ready(function(event) {
 
   // normal options...
   infinite: true,
-  slidesToShow: 8,
+  slidesToShow: 5,
   slidesToScroll: 1,
   autoplay: true,
   autoplaySpeed: 2000,
@@ -52,7 +52,7 @@ $(document).ready(function(event) {
     //   "box-shadow" : "2px 4px 5px rgba(0,0,0,0.8)"
     //   }
     // })
-    
+
   })
 
 })

@@ -1,17 +1,42 @@
-
-<img class='poster' src="https://image.tmdb.org/t/p/w500/<%=@movie["poster_path"]%>">
-
-<div id="movie-info">
-  <h2><%= @movie["title"] %></h2>
-  <p><%= @movie["overview"] %></p>
-
-  <p>Average Rating</p>
+<div class="row">
+  <div class="col-md-4">
+    <img src="https://image.tmdb.org/t/p/w500/<%=@movie["poster_path"]%>">
+  </div>
+  <div>
+    <h2>Rating</h2>
+  </div>
+  <div class="col-md-5 col-md-offset-1">
+    <div class="well movie-title card-panel">
+      <h2><%= @movie["title"] %></h2>
+      <p><%= @movie["overview"] %></p>
+    </div>
+  </div>
 </div>
 
+<div class="row">
+  <div class="col-md-5 col-md-offset-1">
+    <div class="well review-info card-panel">
+      <h3>Review Title</h3>
+      <p>Review Conclusion<p>
+        <p>Review Score</p>
+        <p>Author Name</p>
+      </div>
+  </div>
+  <div class="col-md-5">
+    <div class="well review-info card-panel">
+      <h3>Review Title</h3>
+      <p>Review Conclusion<p>
+        <p>Review Score</p>
+        <p>Author Name</p>
+      </div>
+  </div>
+
+</div>
 <%= link_to "Click here to write a review", new_movie_review_path(@movie['id']) %>
 
 <div id="review-info">
  <% @reviews.each do |review| %>
   <li><%= review.title %></li>
   <%end%>
+
 </div>

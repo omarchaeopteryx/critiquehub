@@ -15,7 +15,7 @@ class ReviewsController < ApplicationController
 
     @review = Review.new(review_params)
     if @review.save
-      redirect_to movie_review_path(@review.id)
+      redirect_to movie_review_path(@review.movie_id, @review.id)
     else
       render :new, status: 422
     end
