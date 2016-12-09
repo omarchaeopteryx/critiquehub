@@ -16,5 +16,5 @@ Rails.application.routes.draw do
   end
 
   root "reviews#index"
-
+  post "movies/search", to: 'movies#search', as: :search_movies
 end

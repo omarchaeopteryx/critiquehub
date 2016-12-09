@@ -1,0 +1,5 @@
+<h1 align="center">Search Result of "<%= @search_term %>"</h1><br>
+
+<% @movies.each do |movie| %>
+    <%= link_to image_tag("https://image.tmdb.org/t/p/w500/#{movie.poster_path}", class: "search-img"), "/movies/#{movie.id}" %>
+<% end %>

@@ -15,4 +15,15 @@ class MoviesController < ApplicationController
     render :show
   end
 
+  def search
+    @movies = Tmdb::Movie.find(search_params)
+    @search_term = search_params
+  end
+
+  private
+
+    def search_params
+      params.require(:search)
+    end
+
 end
