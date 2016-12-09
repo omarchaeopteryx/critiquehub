@@ -1,7 +1,8 @@
 require 'rails_helper'
 
 describe Review do
-  subject { Review.new(reviewer_id: 1,
+  let(:admin_user) { User.create!(username: "adminuser", email: "admin@admin.com", type_of_user: 1, password: "123456")}
+  subject { Review.new(reviewer_id: admin_user.id,
                            movie_id: 1,
                            score: 5,
                            title: "Batman Movie review",
