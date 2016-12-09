@@ -33,23 +33,6 @@ $navbar-default-bg: #563D7C;
   box-shadow: 2px 4px 5px rgba(0,0,0,0.8);
 }
 
-// .poster span {
-//   position: absolute;
-//   bottom: 150px;
-//   left: px;
-//   background: rgba(29, 106, 154, 0.72);
-//   color: #fff;
-//
-//
-//   visibility: hidden;
-//   opacity: 0;
-//
-//   -webkit-transition: visibility opacity 0.2s;
-// }
-// .poster span {
-//   visibility: visible;
-//   opacity: 1;
-// }
 
 .poster {
   position: relative;
@@ -90,6 +73,16 @@ $navbar-default-bg: #563D7C;
   margin: 0.5rem 0 1rem 0;
   border-radius: 2px;
   background-color: #fff;
+}
+
+.review-info {
+  width: 40%;
+  margin: 40px;
+}
+
+.user-review-info {
+  width: 500px;
+  margin: 40px;
 }
 
 .container-1 {
