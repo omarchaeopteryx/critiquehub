@@ -1,15 +1,14 @@
-
-<img>Movie Image</img>
-
-<div id="movie-info">
-  <h2>Movie Title</h2>
-  <p>Description</p>
-  <p>Average Rating</p>
-</div>
-
-<div id="review-info">
-  <h3>Review Title</h3>
-  <p>Review Conclusion<p>
-  <p>Review Score</p>
-  <p>Author Name</p>
+<div class="container">
+  <div class="row">
+    <h1 align="center"><%= @review.user.username %></h1>
+      <div class="well col-xs-8 col-xs-offset-2">
+        <div align="center">
+          <%= image_tag gravatar_for(@review.user, size: 150, align: "center" ), class: "img-circle" %>
+        </div>
+        <p><%= @review.title %></p>
+        <p><%= @review.content %></p>
+        <p><%= @review.conclusion %></p>
+        <p><%= @review.score %></p>
+      </div>
+  </div>
 </div>
