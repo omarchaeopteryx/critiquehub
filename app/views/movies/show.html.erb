@@ -13,40 +13,15 @@
   </div>
 </div>
 
-<div class="row">
-  <div class="col-md-5 col-md-offset-1">
-    <div class="col s12 m7">
-   <h2 class="header">Horizontal Card</h2>
-   <div class="card horizontal">
-     <div class="card-image">
-       <img src="http://lorempixel.com/100/190/nature/6">
-     </div>
-     <div class="card-stacked">
-       <div class="card-content">
-         <p>I am a very simple card. I am good at containing small bits of information.</p>
-       </div>
-       <div class="card-action">
-         <a href="#">This is a link</a>
-       </div>
-     </div>
-   </div>
- </div>
-  </div>
-  <div class="col-md-5">
+
+  <% @reviews.each do |review| %>
+
     <div class="well review-info card-panel">
-      <h3>Review Title</h3>
-      <p>Review Conclusion<p>
-        <p>Review Score</p>
-        <p>Author Name</p>
-      </div>
-  </div>
-
-</div>
-<%= link_to "Click here to write a review", new_movie_review_path(@movie['id']) %>
-
-<div id="review-info">
- <% @reviews.each do |review| %>
-  <li><%= review.title %></li>
+      <h4><%= review.title %></h4>
+      <h6>Score: <%= review.score %> / 5 </h6>
+      <p><%= truncate(review.conclusion, length: 150){ link_to "Continue", movie_review_path(@movie['id'], review.id) } %><p>
+      <p><small>Written by <%= review.user.username %> <%= time_ago_in_words(review.created_at) %></small></p>
+    </div>
   <%end%>
 
-</div>
+<%= link_to "Click here to write a review", new_movie_review_path(@movie['id']) %>

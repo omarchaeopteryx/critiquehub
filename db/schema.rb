@@ -16,27 +16,31 @@ ActiveRecord::Schema.define(version: 20161208004329) do
   enable_extension "plpgsql"
 
   create_table "comments", force: :cascade do |t|
-    t.integer "review_id",   null: false
-    t.integer "user_id",     null: false
-    t.string  "description", null: false
-    t.string  "timestamps"
+    t.integer  "review_id",   null: false
+    t.integer  "user_id",     null: false
+    t.string   "description", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "reviews", force: :cascade do |t|
-    t.integer "reviewer_id", null: false
-    t.integer "movie_id",    null: false
-    t.integer "score",       null: false
-    t.string  "title",       null: false
-    t.text    "content",     null: false
-    t.text    "conclusion",  null: false
-    t.string  "timestamps"
+    t.integer  "reviewer_id", null: false
+    t.integer  "movie_id",    null: false
+    t.integer  "score",       null: false
+    t.string   "title",       null: false
+    t.text     "content",     null: false
+    t.text     "conclusion",  null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "username",        null: false
-    t.string "password_digest", null: false
-    t.string "email",           null: false
-    t.string "timestamps"
+    t.string   "username",        null: false
+    t.string   "password_digest", null: false
+    t.string   "email",           null: false
+    t.integer  "type_of_user",    null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
 end

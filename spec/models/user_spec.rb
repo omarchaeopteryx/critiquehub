@@ -3,7 +3,8 @@ require 'rails_helper'
 describe User do
   subject { User.new(username: "BENJAMIN",
                      password_digest: "1234",
-                     email: "BENJAMIN@gmail.com"
+                     email: "BENJAMIN@gmail.com",
+                     type_of_user: 0
                      ) }
 
   it { should have_many(:reviews) }
@@ -38,5 +39,3 @@ describe User do
     expect(subject.save).to be false
   end
 end
-
-
