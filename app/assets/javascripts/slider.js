@@ -1,4 +1,4 @@
-$(document).ready(function(event) {
+$(document).on("turbolinks:load", function(event) {
 
   $('.movie-slider').slick({
 
