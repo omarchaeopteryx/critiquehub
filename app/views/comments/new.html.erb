@@ -1,7 +1,7 @@
 
-      <%= form_for(@comment, html: { class: "form-horizontal", role: "form" }, url: movie_review_comment_path) do |f| %>
+      <%= form_for(@comment, html: { class: "form-horizontal", role: "form" }, url: movie_review_comments_path) do |f| %>
       <%= f.text_field :user_id, type: "hidden", value: current_user.id %>
-      <%= f.text_field :review_id, type: "hidden", value: @review.id %>
+      <%= f.text_field :review_id, type: "hidden", value: params[:review_id] %>
       <div class="form-group">
         <div class="col-sm-2 control-label">
           <%= f.label :description %>
