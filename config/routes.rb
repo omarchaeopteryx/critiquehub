@@ -8,8 +8,9 @@ Rails.application.routes.draw do
 
   get 'movies', to: 'movies#index'
 
+  resources :movies do
   resources :reviews
-  resources :movies
+  end
 
   root "reviews#index"
 
