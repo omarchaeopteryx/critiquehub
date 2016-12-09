@@ -1,31 +1,139 @@
-
-<h3>Test</h3>
-<div id="main-slider"  class="movie-slider">
-    <% @movies.each do |movie| %>
-         <div><a href='/movies/<%=movie.id%>'><img class='poster' src="https://image.tmdb.org/t/p/w500/<%=movie.poster_path%>"><%= movie.title %></a></div>
-  <% end %>
+<h2 class="title-homepage">Popular now</h2>
+<div class="row movie-slider-home-page">
+  <div class="col-md-10 col-md-offset-1">
+    <div id="main-slider"  class="movie-slider">
+      <% @movies.each do |movie| %>
+        <div class='poster'>
+          <img class='poster' src="https://image.tmdb.org/t/p/w500/<%=movie.poster_path%>">
+          <a href='/movies/<%=movie.id%>'>
+            <%= truncate(movie.title, length: 25 ) %>
+          </a>
+        </div>
+      <% end %>
+    </div>
+  </div>
 </div>
 
+<h2 class="title-homepage">Genres</h2>
+<div class="row movie-slider-home-page">
+  <div class="col-md-10 col-md-offset-1">
+    <div id="main-slider"  class="movie-slider">
+      <div class='poster'>
+        <img src="https://images-na.ssl-images-amazon.com/images/M/MV5BMjA4MDU0NTUyN15BMl5BanBnXkFtZTgwMzQxMzY4MjE@._V1_UX182_CR0,0,182,268_AL_.jpg">
+        <a href='/movies?genre=Action'>
+          Action
+        </a>
+      </div>
 
-<h2>Genres</h2>
-<div id="genre-slider"  class="movie-slider">
-  <div><a href='/movies?genre=Action'><img class='poster' src="https://images-na.ssl-images-amazon.com/images/M/MV5BMjA4MDU0NTUyN15BMl5BanBnXkFtZTgwMzQxMzY4MjE@._V1_UX182_CR0,0,182,268_AL_.jpg">Action</a></div>
-  <div><a href='/movies?genre=Adventure'><img class='poster' src="https://images-na.ssl-images-amazon.com/images/M/MV5BMjEwMzMxODIzOV5BMl5BanBnXkFtZTgwNzg3OTAzMDI@._V1_SX214_AL_.jpg">Adventure</a></div>
-  <div><a href='/movies?genre=Animation'><img class='poster' src="https://image.tmdb.org/t/p/w500//z4x0Bp48ar3Mda8KiPD1vwSY3D8.jpg">Animation</a></div>
-  <div><a href='/movies?genre=Comedy'><img class='poster' src="https://image.tmdb.org/t/p/w500//inVq3FRqcYIRl2la8iZikYYxFNR.jpg">Comedy</a></div>
-  <div><a href='/movies?genre=Crime'><img class='poster' src="https://image.tmdb.org/t/p/w500//oFOG2yIRcluKfTtYbzz71Vj9bgz.jpg">Crime</a></div>
-  <div><a href='/movies?genre=Documentary'><img class='poster' src="https://image.tmdb.org/t/p/w500//hBdcsiqtZR916eFpkCnQGkzN5lb.jpg">Documentary</a></div>
-  <div><a href='/movies?genre=Drama'><img class='poster' src="https://image.tmdb.org/t/p/w500//h6O5OE3ueRVdCc7V7cwTiQocI7D.jpg">Drama</a></div>
-  <div><a href='/movies?genre=Family'><img class='poster' src="https://image.tmdb.org/t/p/w500//hGRfWcy1HRGbsjK6jF7NILmqmFT.jpg">Family</a></div>
-  <div><a href='/movies?genre=Fantasy'><img class='poster' src="https://image.tmdb.org/t/p/w500//xMvzfhXZdfeLBZZUIQRB4vw1EtA.jpg">Fantasy</a></div>
-  <div><a href='/movies?genre=History'><img class='poster' src="https://image.tmdb.org/t/p/w500//noUp0XOqIcmgefRnRZa1nhtRvWO.jpg">History</a></div>
-  <div><a href='/movies?genre=Horror'><img class='poster' src="https://image.tmdb.org/t/p/w500//lw0IqOSMsQcy1QnVIEIDppLmNwk.jpg">Horror</a></div>
-  <div><a href='/movies?genre=Music'><img class='poster' src="https://image.tmdb.org/t/p/w500//s9ye87pvq2IaDvjv9x4IOXVjvA7.jpg">Music</a></div>
-  <div><a href='/movies?genre=Mystery'><img class='poster' src="https://image.tmdb.org/t/p/w500//gdiLTof3rbPDAmPaCf4g6op46bj.jpg">Mystery</a></div>
-  <div><a href='/movies?genre=Romance'><img class='poster' src="https://image.tmdb.org/t/p/w500//kHXEpyfl6zqn8a6YuozZUujufXf.jpg">Romance</a></div>
-  <div><a href='/movies?genre=Science%20Fiction'><img class='poster' src="https://image.tmdb.org/t/p/w500//nBNZadXqJSdt05SHLqgT0HuC5Gm.jpg">Science Fiction</a></div>
-  <div><a href='/movies?genre=TV%20Movie'><img class='poster' src="https://image.tmdb.org/t/p/w500//84FbbKA1Knskhxh2gXtkH9nM8QP.jpg">TV Movie</a></div>
-  <div><a href='/movies?genre=Thriller'><img class='poster' src="https://image.tmdb.org/t/p/w500//lFSSLTlFozwpaGlO31OoUeirBgQ.jpg">Thriller</a></div>
-  <div><a href='/movies?genre=War'><img class='poster' src="https://image.tmdb.org/t/p/w500//svPHnYE7N5NAGO49dBmRhq0vDQ3.jpg">War</a></div>
-  <div><a href='/movies?genre=Western'><img class='poster' src="https://image.tmdb.org/t/p/w500//wfPHdfofBD5PN96dV96a51B3Ja2.jpg">Western</a></div>
+      <div class='poster'>
+        <img src="https://images-na.ssl-images-amazon.com/images/M/MV5BMjEwMzMxODIzOV5BMl5BanBnXkFtZTgwNzg3OTAzMDI@._V1_SX214_AL_.jpg">
+        <a href='/movies?genre=Adventure'>
+          Adventure
+        </a>
+      </div>
+
+      <div class='poster'>
+        <img src="https://image.tmdb.org/t/p/w500//z4x0Bp48ar3Mda8KiPD1vwSY3D8.jpg">
+        <a href='/movies?genre=Animation'>
+          Animation
+        </a>
+      </div>
+      <div class='poster'>
+        <img src="https://image.tmdb.org/t/p/w500//inVq3FRqcYIRl2la8iZikYYxFNR.jpg">
+        <a href='/movies?genre=Comedy'>
+          Comedy
+        </a>
+      </div>
+      <div class='poster'>
+        <img src="https://image.tmdb.org/t/p/w500//oFOG2yIRcluKfTtYbzz71Vj9bgz.jpg">
+        <a href='/movies?genre=Crime'>
+          Crime
+        </a>
+      </div>
+      <div class='poster'>
+        <img src="https://image.tmdb.org/t/p/w500//hBdcsiqtZR916eFpkCnQGkzN5lb.jpg">
+        <a href='/movies?genre=Documentary'>
+          Documentary
+        </a>
+      </div>
+      <div class='poster'>
+        <img src="https://image.tmdb.org/t/p/w500//h6O5OE3ueRVdCc7V7cwTiQocI7D.jpg">
+        <a href='/movies?genre=Drama'>
+          Drama
+        </a>
+      </div>
+      <div class='poster'>
+        <img src="https://image.tmdb.org/t/p/w500//hGRfWcy1HRGbsjK6jF7NILmqmFT.jpg">
+        <a href='/movies?genre=Family'>
+          Family
+        </a>
+      </div>
+      <div class='poster'>
+        <img src="https://image.tmdb.org/t/p/w500//xMvzfhXZdfeLBZZUIQRB4vw1EtA.jpg">
+        <a href='/movies?genre=Fantasy'>
+          Fantasy
+        </a>
+      </div>
+      <div class='poster'>
+        <img src="https://image.tmdb.org/t/p/w500//noUp0XOqIcmgefRnRZa1nhtRvWO.jpg">
+        <a href='/movies?genre=History'>
+          History
+        </a>
+      </div>
+      <div class='poster'>
+        <img src="https://image.tmdb.org/t/p/w500//lw0IqOSMsQcy1QnVIEIDppLmNwk.jpg">
+        <a href='/movies?genre=Horror'>
+          Horror
+        </a>
+      </div>
+      <div class='poster'>
+        <img src="https://image.tmdb.org/t/p/w500//s9ye87pvq2IaDvjv9x4IOXVjvA7.jpg">
+        <a href='/movies?genre=Music'>
+          Music
+        </a>
+      </div>
+      <div class='poster'>
+        <img src="https://image.tmdb.org/t/p/w500//gdiLTof3rbPDAmPaCf4g6op46bj.jpg">
+        <a href='/movies?genre=Mystery'>
+          Mystery
+        </a>
+      </div>
+      <div class='poster'>
+        <img src="https://image.tmdb.org/t/p/w500//kHXEpyfl6zqn8a6YuozZUujufXf.jpg">
+        <a href='/movies?genre=Romance'>
+          Romance
+        </a>
+      </div>
+      <div class='poster'>
+        <img src="https://image.tmdb.org/t/p/w500//nBNZadXqJSdt05SHLqgT0HuC5Gm.jpg">
+        <a href='/movies?genre=Science%20Fiction'>
+          Science Fiction
+        </a>
+      </div>
+      <div class='poster'>
+        <img src="https://image.tmdb.org/t/p/w500//84FbbKA1Knskhxh2gXtkH9nM8QP.jpg">
+        <a href='/movies?genre=TV%20Movie'>
+          TV Movie
+        </a>
+      </div>
+      <div class='poster'>
+        <img src="https://image.tmdb.org/t/p/w500//lFSSLTlFozwpaGlO31OoUeirBgQ.jpg">
+        <a href='/movies?genre=Thriller'>
+          Thriller
+        </a>
+      </div>
+      <div class='poster'>
+        <img src="https://image.tmdb.org/t/p/w500//svPHnYE7N5NAGO49dBmRhq0vDQ3.jpg">
+        <a href='/movies?genre=War'>
+          War
+        </a>
+      </div>
+      <div class='poster'>
+        <img src="https://image.tmdb.org/t/p/w500//wfPHdfofBD5PN96dV96a51B3Ja2.jpg">
+        <a href='/movies?genre=Western'>
+          Western
+        </a>
+      </div>
+    </div>
+  </div>
 </div>

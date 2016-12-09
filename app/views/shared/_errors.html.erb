@@ -1,9 +1,9 @@
 <% if object.errors.any? %>
   <div class="rows">
-    <div class="col-xs-8 col-xs-offset-2">
+    <div class="col-xs-6 col-xs-offset-3">
       <div class="panel panel-danger">
         <div class="panel-heading">
-          <h2><%= pluralize(object.errors.count, "error") %> prevented the article from being created.</h2>
+          <h2><%= pluralize(object.errors.count, "error") %></h2>
         </div>
         <div class="panel-body">
           <ul>

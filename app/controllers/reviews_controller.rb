@@ -1,5 +1,3 @@
-require 'themoviedb'
-
 class ReviewsController < ApplicationController
 
   def index
