@@ -12,12 +12,10 @@ class ReviewsController < ApplicationController
   end
 
   def create
-    p review_params
-    # review_params[:reviewer_id] = session[:user_id]
 
     @review = Review.new(review_params)
     if @review.save
-      redirect_to movie_review_path(@review)
+      redirect_to movie_review_path(@review.id)
     else
       render :new, status: 422
     end
@@ -25,6 +23,7 @@ class ReviewsController < ApplicationController
 
   def show
     @review = Review.find_by_id(params[:id])
+    @comments = @review.comments
     render :show
   end
 

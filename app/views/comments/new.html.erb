@@ -1,0 +1,14 @@
+
+      <%= form_for(@comment, html: { class: "form-horizontal", role: "form" }, url: movie_review_comment_path) do |f| %>
+      <%= f.text_field :user_id, type: "hidden", value: current_user.id %>
+      <%= f.text_field :review_id, type: "hidden", value: @review.id %>
+      <div class="form-group">
+        <div class="col-sm-2 control-label">
+          <%= f.label :description %>
+        </div>
+        <div class="col-sm-8">
+          <%= f.text_field :description, class: "form-control", placeholder: "Add a comment", autofocus: true %>
+        </div>
+      </div>
+      <%= f.submit "Publish", class: "btn btn-primary" %>
+      <% end %>
