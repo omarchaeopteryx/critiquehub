@@ -17,10 +17,15 @@ class ReviewsController < ApplicationController
 
     @review = Review.new(review_params)
     if @review.save
-      redirect_to root
+      redirect_to movie_review_path(@review)
     else
       render :new, status: 422
     end
+  end
+
+  def show
+    @review = Review.find_by_id(params[:id])
+    render :show
   end
 
   private
