@@ -6,7 +6,10 @@ Rails.application.routes.draw do
   post 'login', to: 'sessions#create'
   delete 'logout', to: 'sessions#destroy'
 
+  get 'movies', to: 'movies#index'
+
   resources :reviews
+  resources :movies
 
   root "reviews#index"
 

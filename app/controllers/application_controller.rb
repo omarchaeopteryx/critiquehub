@@ -2,6 +2,8 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   helper_method :current_user, :logged_in?
 
+  before_action :set_api_key
+
   def current_user
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
   end
@@ -15,4 +17,10 @@ class ApplicationController < ActionController::Base
       redirect_to login_path, flash: { danger: "You must be logged in to perform that action."}
     end
   end
+
+  private
+
+    def set_api_key
+      Tmdb::Api.key(ENV['API_KEY'])
+    end
 end
