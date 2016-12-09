@@ -14,7 +14,48 @@ $navbar-default-bg: #563D7C;
   color: white;
 }
 
-.poster {
+.movie-slider-home-page {
+  padding-top: 40px;
+  background: linear-gradient(#7D6D6E, #54646F);
+  box-shadow: 2px 2px 3px 3px rgba(0,0,0,0.6);
+}
+
+.poster img{
   height: 250px;
   width: 150px;
+  margin: auto;
+  box-shadow: 2px 4px 5px rgba(0,0,0,0.8);
+}
+
+.poster a {
+  width: 50%;
+  display: block;
+  padding: 5px;
+  margin: auto;
+  text-align: center;
+  text-decoration: none;
+  font-size: 1em;
+  font-weight: bold;
+  color: black;
+}
+
+.title-homepage {
+  padding: 15px 30px;
+}
+
+#navbar-brand {
+  font-weight: bold;
+  font-size: 1.5em;
+}
+
+.poster img:hover{
+  position: relative;
+  top: 0px;
+  left: 0px;
+  width: 200px;
+  height: auto;
+  display:block;
+  z-index:100;
+  box-shadow: 2px 4px 5px rgba(0,0,0,0.3);
+
 }

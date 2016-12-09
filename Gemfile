@@ -29,6 +29,8 @@ gem 'pg'
 gem 'rails_12factor'
 gem "jquery-slick-rails"
 
+gem 'shoulda-matchers', '~> 3.1', '>= 3.1.1'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
