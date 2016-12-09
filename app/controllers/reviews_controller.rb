@@ -12,11 +12,20 @@ class ReviewsController < ApplicationController
   end
 
   def create
+    p review_params
+    # review_params[:reviewer_id] = session[:user_id]
+
     @review = Review.new(review_params)
     if @review.save
-      redirect_to review_path
+      redirect_to root
     else
-      render :new
+      render :new, status: 422
     end
   end
+
+  private
+
+    def review_params
+      params.require(:review).permit(:reviewer_id, :content, :conclusion, :score, :title, :movie_id)
+    end
 end

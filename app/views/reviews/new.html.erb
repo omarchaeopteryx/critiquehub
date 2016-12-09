@@ -1,11 +1,15 @@
 <h1 align="center">Create a New Review</h1>
 
 
+<%= render "shared/errors", object: @review %>
 <div class="container">
   <div class="row">
     <div class="col-xs-8 col-xs-offset-2">
-
       <%= form_for(@review, html: { class: "form-horizontal", role: "form" }, url: movie_reviews_path) do |f| %>
+
+      <%= f.text_field :reviewer_id, type: "hidden", value: current_user.id %>
+
+      <%= f.text_field :movie_id, type: "hidden", value: params[:movie_id] %>
 
       <div class="form-group">
         <div class="col-sm-2 control-label">
