@@ -5,3 +5,4 @@ module ApplicationHelper
     "https://secure.gravatar.com/avatar/#{gravatar_id}?s=#{size}&d=retro"
   end
 end
+
