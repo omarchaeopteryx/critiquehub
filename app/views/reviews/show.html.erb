@@ -10,5 +10,12 @@
         <p><%= @review.conclusion %></p>
         <p><%= @review.score %></p>
       </div>
+      <div>
+        <% @comments.each do |comment| %>
+          <p><%= comment.description %></p>
+          <p><%= comment.user.username %></p>
+        <% end %>
+      </div>
+    <%= button_to "Add a comment", new_movie_review_comment_path(@review.movie_id, @review.id) %>
   </div>
 </div>
