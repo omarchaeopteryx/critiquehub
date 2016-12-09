@@ -1,10 +1,10 @@
-<h1 align="center">Welcome back, <%= current_user.username %></h1>
 
 <div class="container">
   <div class="row">
+    <h1 align="center">Welcome back, <%= current_user.username %></h1>
       <div class="well col-xs-8 col-xs-offset-2">
         <div align="center">
-          <%= gravatar_for(current_user, size: 150, align: "center" ) %>
+          <%= image_tag gravatar_for(current_user, size: 150, align: "center" ), class: "img-circle" %>
         </div>
       </div>
   </div>

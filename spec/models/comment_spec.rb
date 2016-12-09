@@ -1,41 +1,22 @@
 require 'rails_helper'
 
 describe Comment do
-  let!(:user) { User.create(username: "benjamin",
-                           password_digest: "1234",
-                           email: "benjamin@gmail.com"
-                           ) }
-  let!(:comment) { user.comments.create(review_id: 1,
-                           description: "Yeah I agree"
-                           ) }
+  it { should belong_to(:user) }
+  it { should belong_to(:review) }
+  it { should validate_presence_of(:review_id) }
+  it { should validate_presence_of(:user_id) }
+  it { should validate_presence_of(:description) }
+  it { should validate_presence_of(:user) }
 
-  it "has a review id" do
-    expect(comment.review_id).to eq 1
+  it do
+    should validate_length_of(:description).
+      is_at_least(5).
+      on(:create)
   end
 
-  it "has a user" do
-    u = User.find_by(username: "benjamin")
-    test_id = u.id
-    expect(comment.user_id).to eq test_id
-  end
-
-  it "has a user that is in our database" do
-    expect(comment.user).not_to be nil
-  end
-
-  it "has a description" do
-    expect(comment.description).to eq "Yeah I agree"
-  end
-
-  it "has a description with length that has minimum char of 5" do
-    comment.description = "b"
-    expect(comment.save).to be false
-  end
-
-  it "has a description with length that has maximum char of 100" do
-    string = ""
-    101.times { string << ("a".."z").to_a[rand(24)]}
-    comment.description = string
-    expect(comment.save).to be false
+  it do
+    should validate_length_of(:description).
+      is_at_most(100).
+      on(:create)
   end
 end
