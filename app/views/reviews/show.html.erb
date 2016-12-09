@@ -19,3 +19,39 @@
     <%= link_to "Add a comment", new_movie_review_comment_path(@review.movie_id, @review.id) %>
   </div>
 </div>
+
+
+<h1 align="center"><%= @review.title%></h1>
+<h2 align="center"><%= @review.score %> out of 5</h2>
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+    <div class="well card-panel center">
+      <%= image_tag gravatar_for(current_user, size: 150, align: "center" ), class: "img-circle" %>
+      <p><small><%= @review.user.username %></small></p>
+      <p><%= @review.content %></p>
+      <p><%= @review.conclusion %></p>
+    </div>
+    <!-- <small>Reviews: <%= current_user.reviews.count %></small> -->
+
+  </div>
+</div>
+<h4 align="center">Your Reviews</h4>
+<div class="row">
+    <div class="col-md-5 col-md-offset-1">
+      <div class="well user-review-info card-panel">
+        <h3>Review Title</h3>
+        <p>Review Conclusion<p>
+          <p>Review Score</p>
+          <p>Author Name</p>
+        </div>
+    </div>
+  <div class="col-md-5">
+    <div class="well user-review-info card-panel">
+      <h3>Review Title</h3>
+      <p>Review Conclusion<p>
+        <p>Review Score</p>
+        <p>Author Name</p>
+      </div>
+  </div>
+
+</div>

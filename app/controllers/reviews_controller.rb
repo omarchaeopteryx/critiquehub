@@ -3,7 +3,6 @@ class ReviewsController < ApplicationController
   def index
     @movies = Tmdb::Movie.popular
     @reviews = Review.all.sort_by {|review| review.comments.count }
-    p @reviews
     render :index
   end
 

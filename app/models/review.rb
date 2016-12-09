@@ -8,6 +8,7 @@ class Review < ActiveRecord::Base
   validate :reviewer_validation
 
   def reviewer_validation
+    return if user.nil?
     if self.user.type_of_user != 0
       errors.add :user, "is not a valid reviewer"
     end
