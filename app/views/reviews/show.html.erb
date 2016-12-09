@@ -16,6 +16,6 @@
           <p><%= comment.user.username %></p>
         <% end %>
       </div>
-    <%= button_to "Add a comment", new_movie_review_comment_path(@review.movie_id, @review.id) %>
+    <%= link_to "Add a comment", new_movie_review_comment_path(@review.movie_id, @review.id) %>
   </div>
 </div>
