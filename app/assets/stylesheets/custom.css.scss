@@ -18,24 +18,49 @@ $navbar-default-bg: #563D7C;
   padding-top: 40px;
   background: linear-gradient(#7D6D6E, #54646F);
   box-shadow: 2px 2px 3px 3px rgba(0,0,0,0.6);
+  // z-index: 50;
 }
 
-.poster img{
-  height: 250px;
-  width: 150px;
-  margin: auto;
+
+.poster a img {
+  position: relative;
+  display: block;
+  margin: 0 auto;
+  width: 200px;
+  height: auto;
+  transition: all .2s ease-in-out;
   box-shadow: 2px 4px 5px rgba(0,0,0,0.8);
 }
 
+// .poster span {
+//   position: absolute;
+//   bottom: 150px;
+//   left: px;
+//   background: rgba(29, 106, 154, 0.72);
+//   color: #fff;
+//
+//
+//   visibility: hidden;
+//   opacity: 0;
+//
+//   -webkit-transition: visibility opacity 0.2s;
+// }
+// .poster span {
+//   visibility: visible;
+//   opacity: 1;
+// }
+
 .poster {
   position: relative;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 
 .poster a {
   width: 50%;
   display: block;
   padding: 5px;
-  margin: auto;
+  margin: 0 auto;
   text-align: center;
   text-decoration: none;
   font-size: 1em;
@@ -52,14 +77,16 @@ $navbar-default-bg: #563D7C;
   font-size: 1.5em;
 }
 
-.poster img:hover{
-  position: absolute;
-  top: -2px;
-  left: 0px;
-  width: 200px;
-  height: auto;
-  display:block;
-  z-index:100;
-  box-shadow: 2px 4px 5px rgba(0,0,0,0.3);
+.poster a img:hover{
+  box-shadow: 2px 4px 5px rgba(0,0,0,0.5);
+  transform: scale(1.2);
 
+}
+
+.card-panel {
+  box-shadow: 2px 4px 5px rgba(0,0,0,0.5);
+  padding: 20px;
+  margin: 0.5rem 0 1rem 0;
+  border-radius: 2px;
+  background-color: #fff;
 }
