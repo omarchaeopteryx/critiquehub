@@ -1,5 +1,5 @@
 class ReviewsController < ApplicationController
-
+  before_action :require_user, only: [:show]
   def index
     @movies = Tmdb::Movie.popular
     @reviews = Review.all.sort_by {|review| review.comments.count }
@@ -32,5 +32,9 @@ class ReviewsController < ApplicationController
 
     def review_params
       params.require(:review).permit(:reviewer_id, :content, :conclusion, :score, :title, :movie_id)
+    end
+
+    def require_user
+      redirect_to login_path if !logged_in?
     end
 end

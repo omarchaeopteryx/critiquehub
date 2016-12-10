@@ -148,13 +148,15 @@
 </div>
 </div>
 
-<h2 class="title-homepage">Popular Reviews</h2>
-
-<% @reviews.each do |review| %>
+<h2 class="title-homepage center">Popular Reviews</h2>
+<div class="container">
+  <% @reviews.each do |review| %>
   <div class="well review-info card-panel">
     <h4><%= review.title %></h4>
     <h6>Score: <%= review.score %> / 5 </h6>
     <p><%= truncate(review.conclusion, length: 150){ link_to "Continue", movie_review_path(review.movie_id, review.id) } %><p>
-    <p><small>Written by <%= review.user.username %> <%= time_ago_in_words(review.created_at) %></small></p>
-  </div>
-<%end%>
+      <p><small>Written by <%= review.user.username %> <%= time_ago_in_words(review.created_at) %></small></p>
+    </div>
+    <%end%>
+
+</div>

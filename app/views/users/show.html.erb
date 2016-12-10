@@ -9,22 +9,15 @@
   </div>
 </div>
 <h4 align="center">Your Reviews</h4>
-<div class="row">
-    <div class="col-md-5 col-md-offset-1">
-      <div class="well user-review-info card-panel">
-        <h3>Review Title</h3>
-        <p>Review Conclusion<p>
-          <p>Review Score</p>
-          <p>Author Name</p>
-        </div>
-    </div>
-  <div class="col-md-5">
-    <div class="well user-review-info card-panel">
-      <h3>Review Title</h3>
-      <p>Review Conclusion<p>
-        <p>Review Score</p>
-        <p>Author Name</p>
-      </div>
-  </div>
+<div class="container">
 
+  <% @user.reviews.each do |review| %>
+
+  <div class="well review-info card-panel">
+    <h4><%= review.title %></h4>
+    <h6>Score: <%= review.score %> / 5 </h6>
+    <p><%= truncate(review.conclusion, length: 150){ link_to "Continue", movie_review_path(@movie['id'], review.id) } %><p>
+      <p><small>Written by <%= review.user.username %> <%= time_ago_in_words(review.created_at) %></small></p>
+    </div>
+    <%end%>
 </div>
