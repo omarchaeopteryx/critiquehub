@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_action :require_user, only: [:show]
+  
   def new
     @user = User.new
   end
@@ -15,11 +17,16 @@ class UsersController < ApplicationController
   end
 
   def show
+    @user = User.find(current_user.id)
   end
 
   private
 
     def user_params
       params.require(:user).permit(:username, :email, :password, :type_of_user)
+    end
+
+    def require_user
+      redirect_to login_path if !logged_in?
     end
 end

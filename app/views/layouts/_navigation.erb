@@ -2,12 +2,12 @@
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
-      <%= link_to "Vhub", root_path, class: "navbar-brand", id: "logo" %>
+      <%= link_to image_tag("logo.png", size: "100x74", class: "logo"), root_path %>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
+      <!-- <ul class="nav navbar-nav">
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Genre <span class="caret"></span></a>
           <ul class="dropdown-menu">
@@ -20,7 +20,7 @@
             <li><a href="#">One more separated link</a></li>
           </ul>
         </li>
-      </ul>
+      </ul> -->
 
       <ul class="nav navbar-nav navbar-right">
         <% if logged_in? %>

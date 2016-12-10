@@ -3,7 +3,7 @@
     <img id="movie-page-poster" src="https://image.tmdb.org/t/p/w500/<%=@movie["poster_path"]%>">
   </div>
   <div class="col-md-5 col-md-offset-1">
-    <h2>Rating</h2>
+    <h3 align="center">Average Rating:<br> <%= @movie["vote_average"] %> out of 10</h3>
   </div>
   <div class="col-md-5 col-md-offset-1">
     <div class="well movie-title card-panel">
@@ -13,17 +13,18 @@
   </div>
 </div>
 
+<div class="container">
 
   <% @reviews.each do |review| %>
 
-    <div class="well review-info card-panel">
-      <h4><%= review.title %></h4>
-      <h6>Score: <%= review.score %> / 5 </h6>
-      <p><%= truncate(review.conclusion, length: 150){ link_to "Continue", movie_review_path(@movie['id'], review.id) } %><p>
+  <div class="well review-info card-panel">
+    <h4><%= review.title %></h4>
+    <h6>Score: <%= review.score %> / 5 </h6>
+    <p><%= truncate(review.conclusion, length: 150){ link_to "Continue", movie_review_path(@movie['id'], review.id) } %><p>
       <p><small>Written by <%= review.user.username %> <%= time_ago_in_words(review.created_at) %></small></p>
     </div>
-  <%end%>
-
-<% if current_user.type_of_user == 0 %>
-  <%= link_to "Click here to write a review", new_movie_review_path(@movie['id']) %>
-<% end %>
+    <%end%>
+    <% if logged_in? %>
+    <%= link_to "Click here to write a review", new_movie_review_path(@movie['id']), class: "btn btn-primary" %>
+    <% end %>
+</div>
