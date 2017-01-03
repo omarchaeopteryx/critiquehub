@@ -1,3 +1,6 @@
+# Summary
+A lightweight app that allows users to search, comment on, and rate specific films. Uses the Open Movie DataBase API to dynamically load content.
+
 # Team name
 * Two thumbs up
 
