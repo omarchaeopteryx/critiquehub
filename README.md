@@ -34,3 +34,6 @@ able to view profile page and their recent activity
 
 * find movie by title/genre
 able to search for a movie by genre or title either by clicking through the home page or by submitting through the search bar
+
+####
+Created by team Two Thumbs Up in San Diego, Fall 2016. 
