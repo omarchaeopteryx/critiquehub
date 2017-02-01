@@ -1,6 +1,8 @@
 # Summary
 A lightweight app that allows users to search, comment on, and rate specific films. Uses the Open Movie DataBase API to dynamically load content.
 
+![image](https://docs.google.com/drawings/d/1TjxEtWYBTV_sBJqQb1iyhcixLKQEYmITDmENwHpk4Nk/pub?w=759&amp;h=604)
+
 # Team name
 * Two thumbs up
 
@@ -36,4 +38,4 @@ able to view profile page and their recent activity
 able to search for a movie by genre or title either by clicking through the home page or by submitting through the search bar
 
 ####
-Created by team Two Thumbs Up in San Diego, Fall 2016. 
+Created by team Two Thumbs Up in San Diego, Fall 2016.
