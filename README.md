@@ -5,10 +5,10 @@ A lightweight app that allows users to search, comment on, and rate specific fil
 * Two thumbs up
 
 # Team Members
-* Benjamin
-* Omar
-* Chinh
-* Nhan
+* Benjamin Kwok [kwokhuen](https://github.com/kwokhuen)
+* Omar Malik [omarchaeopteryx](https://github.com/omarchaeopteryx)
+* Chinh Nguyen [CHQNguyen](https://github.com/CHQNguyen)
+* Nhan Nguyen [nhantnon](https://github.com/nhantnon)
 
 # General User's Stories (MVP)
 * Two type of users can register (professional and regular user):
